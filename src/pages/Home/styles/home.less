@@ -1,0 +1,78 @@
+.Example {
+  input, button {
+    font: inherit;
+  }
+
+  header {
+    background-color: rgb(50, 54, 57);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    padding: 20px;
+    color: white;
+
+    h1 {
+      font-size: inherit;
+      margin: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    &__document {
+      .react-pdf {
+        &__Document {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        &__Page {
+          //max-width: calc(~"100% - 2em");
+          box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+          margin-bottom: 30px;
+          canvas {
+            max-width: 100%;
+            height: auto !important;
+            border-radius: 5px;
+          }
+          &_textContent {
+            display: none;
+          }
+        }
+
+        &__message {
+          padding: 20px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.Example__container__load {
+  color: white;
+  position: fixed;
+  right: 20px;
+  bottom: 15px;
+  img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  input {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    opacity: 0;
+  }
+}
+
+.react-pdf__Page__textContent {
+  display: none;
+}
